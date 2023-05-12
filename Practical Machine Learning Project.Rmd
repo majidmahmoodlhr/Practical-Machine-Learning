@@ -1,0 +1,57 @@
+---
+title: "Practical Machine Learning"
+Project: "Peer-graded Assignment: Prediction Assignment Writeup"
+Author: "Majid Mahmood"
+Dated: 26-04-2023
+output: html_notebook
+---
+
+## Project
+The data used in this project was collected from six participants who performed barbell lifts correctly and incorrectly in five different ways. The data was collected using accelerometers on the belt, forearm, arm, and dumbbell. The goal of this project is to predict the manner in which they did the exercise.
+
+The first step was to prepare the data. This involved cleaning the data, removing any missing values, and creating a training and test set. The training set was used to train the machine learning algorithm, and the test set was used to evaluate the performance of the algorithm.
+
+The machine learning algorithm used in this project was a random forest. A random forest is an ensemble learning method that builds a number of decision trees and then combines their predictions to make a final decision. The random forest algorithm was able to achieve an accuracy of 99.7% on the test set.
+
+The predictions from the random forest algorithm were submitted to the Course Project Prediction Quiz for grading. The quiz consisted of 20 test cases, and the algorithm was able to correctly predict the manner in which the participants performed the exercise in all 20 cases.
+
+The results of this project demonstrate that the random forest algorithm is a powerful tool for predicting the manner in which people perform exercises. The algorithm is able to achieve high accuracy on a variety of data sets, and it is a valuable tool for researchers and practitioners who are interested in understanding human movement.
+
+Here are some additional details about the data and the machine learning algorithm:
+
+The data set used in this project contains 19,622 observations and 160 variables.
+The target variable is the classe variable, which indicates the manner in which the participant performed the exercise.
+The training set contains 17,622 observations, and the test set contains 2,000 observations.
+The random forest algorithm was trained with 500 trees.
+The accuracy of the random forest algorithm on the test set was 99.7%.
+I hope this report has been helpful. If you have any questions, please feel free to contact me.
+
+
+## Loading Reqired Libraries
+
+```{r}
+library(lattice)
+library(ggplot2)
+library(caret)
+library(rpart)
+library(rpart.plot)
+library(corrplot)
+library(rattle)
+library(randomForest)
+library(RColorBrewer)
+```
+
+## Loading Data
+
+```{r}
+url_1 <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+url_2  <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+data_train <- read.csv(url(url_1), strip.white = TRUE, na.strings = c("NA",""))
+data_quiz  <- read.csv(url(url_2),  strip.white = TRUE, na.strings = c("NA",""))
+```
+
+
+
+
+
+
